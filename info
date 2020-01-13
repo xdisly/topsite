@@ -4,3 +4,5 @@ git status
 git add .
 git commit -m Commit
 git push
+
+https://www.php.net/manual/ru/mysqli.quickstart.dual-interface.php
