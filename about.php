@@ -10,7 +10,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-white">
-	  <a class="navbar-brand text-dark font-weight-bold" href="index.html"><img src="icon.png" width="35" height="35"> Top Site</a>
+	  <a class="navbar-brand text-dark font-weight-bold" href="index.php"><img src="icon.png" width="35" height="35"> Top Site</a>
 	  <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -18,10 +18,10 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link text-dark" href="index.html">Main</a>
+	        <a class="nav-link text-dark" href="index.php">Main</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link text-dark font-weight-bold" href="about.html">About<span class="sr-only">(current)</span></a>
+	        <a class="nav-link text-dark font-weight-bold" href="about.php">About<span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

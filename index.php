@@ -49,18 +49,20 @@
         </button>
       </div>
       <div class="modal-body">
+		  <form action="check.php" method="post">
         Email
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
       <div class="modal-body">
         Password
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
       <div class="modal-body">
         Return password
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success">Sign Up</button>
+        <button name="btn-sign" type="submit" class="btn btn-success">Sign Up</button>
       </div>
+		</form>
     </div>
   </div>
 </div>
