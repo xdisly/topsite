@@ -10,18 +10,17 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-white">
-	  <a class="navbar-brand text-dark font-weight-bold" href="index.html"><img src="icon.png" width="35" height="35"> Top Site</a>
+	  <a class="navbar-brand text-dark font-weight-bold" href="index.php"><img src="icon.png" width="35" height="35"> Top Site</a>
 	  <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link text-dark font-weight-bold" href="index.html">Main<span class="sr-only">(current)</span></a>
+	        <a class="nav-link text-dark font-weight-bold" href="index.php">Main<span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link text-dark" href="about.html">About</a>
+	        <a class="nav-link text-dark" href="about.php">About</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,9 +55,6 @@
         Password
         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
-      <div class="modal-body">
-        Return password
-      </div>
       <div class="modal-footer">
         <button name="btn-sign" type="submit" class="btn btn-success">Sign Up</button>
       </div>
@@ -78,12 +74,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        Email
-      </div>
-      <div class="modal-body">
-        Password
-      </div>
+        <div class="modal-body">
+            <form action="login.php" method="post">
+                Email
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+        <div class="modal-body">
+            Password
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Restore password</button>
         <button type="button" class="btn btn-success">Sign In</button>
