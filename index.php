@@ -121,11 +121,11 @@
 
 					<div class="col">
 						<div class="card mb-2 shadow-lg bg-white rounded">
-						  <img src="https://picsum.photos/500" class="card-img-top">
+						  <img src="/img/krol.jpeg" class="card-img-top">
 						  <div class="card-body">
-						  	<h5 class="card-title font-weight-bold">Post 1</h5>
-						    <p class="card-text">No post description</p>
-						    <a href="#" class="btn btn-primary">Read</a>
+						  	<h5 class="card-title font-weight-bold">Пожилой крол</h5>
+						    <p class="card-text">Не понял</p>
+						    <a href="#" class="btn btn-primary">Извинись</a>
 						  </div>
 						</div>
 					</div>
