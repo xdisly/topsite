@@ -22,6 +22,7 @@ if ($result->num_rows != 0)
     {
     showAlert("Данный email уже зарегистрирован");
     //mysqli_free_result($result);
+    goUri('index.php');
     }
 
 else

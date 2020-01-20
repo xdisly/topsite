@@ -22,6 +22,7 @@ if ($result->num_rows != 1)
     {
     showAlert("Email или пароль введен неверно");
     //mysqli_free_result($result);
+    goUri('index.php');
     }
 
 else
