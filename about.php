@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>About | Top Site</title>
+	<title>Main | Top Site</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="icon" href="icon.png" type="image/x-icon"/>
@@ -14,14 +14,14 @@
 	  <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	
+
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link text-dark" href="index.php">Main</a>
+	        <a class="nav-link text-dark font-weight-bold" href="index.php">Main<span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link text-dark font-weight-bold" href="about.php">About<span class="sr-only">(current)</span></a>
+	        <a class="nav-link text-dark" href="about.php">About</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,74 +35,107 @@
 	        </div>
 	      </li>
 	    </ul>
-	    <button class="btn btn-outline-danger mr-2 my-sm-0" type="submit">Sign Up</button>
-	    <button type="button" class="btn btn-outline-primary mr-5 my-sm-0" data-toggle="modal" data-target="#exampleModal">Sign In</button>
+	    <button type="button" class="btn btn-outline-danger mr-2 my-sm-0" data-toggle="modal" data-target="#sign_up">Sign Up</button>
+	    <button type="button" class="btn btn-outline-primary mr-5 my-sm-0" data-toggle="modal" data-target="#sign_in">Sign In</button>
 
-	    <!--Начало модального окна-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--Начало модального окна (Рег.)-->
+<div class="modal fade" id="sign_up" tabindex="-1" role="dialog" aria-labelledby="sign_upLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+        <h5 class="modal-title" id="sign_upLabel">Sign Up</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Username or email address
+		  <form action="check.php" method="post">
+        Email
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
       </div>
       <div class="modal-body">
         Password
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
       <div class="modal-footer">
+        <button name="btn-sign" type="submit" class="btn btn-success">Sign Up</button>
+      </div>
+		</form>
+    </div>
+  </div>
+</div>
+<!--Конец модального окна-->
+
+<!--Начало модального окна (Вход)-->
+<div class="modal fade" id="sign_in" tabindex="-1" role="dialog" aria-labelledby="sign_inLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sign_inLabel">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+            <form action="login.php" method="post">
+                Email
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="modal-body">
+            Password
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Restore password</button>
-        <button type="button" class="btn btn-success">Sign in</button>
+        <button type="button" class="btn btn-success">Sign In</button>
       </div>
     </div>
   </div>
 </div>
 <!--Конец модального окна-->
 
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    </form>
-	  </div>
-	</nav>
 
-	<div class="jumbotron">
+<!--Начало формы поиска-->
+        <form_search class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form_search>
+<!--Конец формы поиска-->
+
+      </div>
+    </nav>
+
+<div class="jumbotron">
       <div class="jumbotron text-center">
   <h1 class="font-weight-bold">About</h1>
       </div>
    </div>
-	
-	<div class="container-fluid my-2">
-		<div class="row">
-			<div class="col-sm-8">
-				<div class="row my-2">
-
-					<div class="col">
-						<div class="card mb-2 shadow-lg bg-white rounded">
-						  <div class="card-body">
-						    <p class="card-text">No description.</p>
-						  </div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 my-2">
-				<div class="card mb-2 shadow-lg bg-white rounded">
-				  <div class="card-body">
-				    <nav class="nav flex-column">
-				      <a class="nav-link active" href="#">Link 1</a>
-				      <a class="nav-link" href="#">Link 2</a>
-				      <a class="nav-link" href="#">Link 3</a>
-				    </nav>
-				  </div>
-				</div>
-			</div>
-		</div>
-	</div>
+    
+    <div class="container-fluid my-2">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="card mb-2 shadow-lg bg-white rounded">
+                          <div class="card-body">
+                            <p class="card-text">No description.</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 my-2">
+                <div class="card mb-2 shadow-lg bg-white rounded">
+                  <div class="card-body">
+                    <nav class="nav flex-column">
+                      <a class="nav-link active" href="#">Link 1</a>
+                      <a class="nav-link" href="#">Link 2</a>
+                      <a class="nav-link" href="#">Link 3</a>
+                    </nav>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <div class="d-flex flex-column">
