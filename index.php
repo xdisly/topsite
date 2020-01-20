@@ -14,6 +14,7 @@
 	  <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
@@ -50,7 +51,8 @@
       <div class="modal-body">
 		  <form action="check.php" method="post">
         Email
-        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
       <div class="modal-body">
         Password
         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
@@ -77,7 +79,8 @@
         <div class="modal-body">
             <form action="login.php" method="post">
                 Email
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></div>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
         <div class="modal-body">
             Password
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
@@ -91,11 +94,15 @@
 </div>
 <!--Конец модального окна-->
 
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    </form>
-	  </div>
-	</nav>
+
+<!--Начало формы поиска-->
+        <form_search class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form_search>
+<!--Конец формы поиска-->
+
+      </div>
+    </nav>
 
 	<div class="jumbotron">
       <div class="jumbotron text-center">
