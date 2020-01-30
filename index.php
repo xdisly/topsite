@@ -124,8 +124,8 @@
 						  <img src="/img/krol.jpeg" class="card-img-top">
 						  <div class="card-body">
 						  	<h5 class="card-title font-weight-bold">Пожилой крол</h5>
-						    <p class="card-text">Не понял</p>
-						    <a href="#" class="btn btn-primary">Извинись</a>
+						    <p class="card-text">Не понял, извинись</p>
+						    <a href="#" class="btn btn-primary">Извиниться</a>
 						  </div>
 						</div>
 					</div>
