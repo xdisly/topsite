@@ -1,0 +1,17 @@
+{
+  "name": "/",
+  "authors": [
+    {
+      "name": "Name",
+      "email": "example@mail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\" : "app/"
+    }
+  },
+  "require": {
+    "noahbuscher/macaw": "dev-master"
+  }
+}
