@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 26.02.19
- * Time: 12:43
- */
 
-namespace App;
+namespace Core;
 
 
 class ServiceController
@@ -17,6 +11,74 @@ class ServiceController
         print_r($text);
         echo '</pre>';
     }
+
+    public static function downloadFile ($URL, $PATH) {
+        $ReadFile = fopen ($URL, "rb");
+        if ($ReadFile) {
+            $WriteFile = fopen ($PATH, "wb");
+            if ($WriteFile){
+                while(!feof($ReadFile)) {
+                    fwrite($WriteFile, fread($ReadFile, 4096 ));
+                }
+                fclose($WriteFile);
+            }
+            fclose($ReadFile);
+        }
+    }
+
+    public static function imageResize($src, $width=400) {
+        $filename=$src;//$filename – полный путь  к файлу.
+        $size = getimagesize ($filename);//функция  getimagesize() возвращает информацию о файле.
+        $w=$size['0'];//ширина изображения
+        $h=$size['1'];//высота  изображения
+        $type = $size['mime'];//mime тип файла
+        //отношение  ширины к высоте, далее будет использовано для пропорционального ресайза  изображения
+        $ratio = $w/$h;
+        $th_w = $width;//ширина  превью
+        $th_h = $th_w/$ratio;//высота  превью:
+        $newImage ='';
+
+
+        //переключатель  типов, возможные варианты изображений: jpg,  png и gif:
+        switch ($type) {
+            case 'image/jpeg':
+                //создаем  изображение из исходного большого изображения:
+                $src_img = imagecreatefromjpeg($filename);
+                //устанавливаем  параметры наложения, в данном случае эта строка не
+                //пригодится, но она будет  нужна, если нужно добавить водяной знак на картинку:
+                imagealphablending($src_img, true);
+                //создаем  пустое изображение нужной высоты и ширины,
+                //в которое будет скопировно исходное  изображение:
+                $thumbImage = imagecreatetruecolor($th_w, $th_h);
+                //копируем  большое изображение в маленькое:
+                imagecopyresampled($thumbImage, $src_img, 0, 0, 0, 0, $th_w, $th_h, $w, $h);
+                //выводим  в браузер маленькое изображение:
+                $newImage = imagejpeg($thumbImage, $filename, 85);
+                break;
+            //для  остальных форматов все аналогично:
+            case 'image/png':
+                $src_img = imagecreatefrompng($filename);
+                imagealphablending($src_img, true);
+                $thumbImage = imagecreatetruecolor($th_w, $th_h);
+                imagecopyresampled($thumbImage, $src_img, 0, 0, 0, 0, $th_w, $th_h, $w, $h);
+                $newImage = imagepng($thumbImage, '', 0);
+                break;
+            case 'image/gif':
+                $src_img = imagecreatefromgif($filename);
+                imagealphablending($src_img, true);
+                $thumbImage = imagecreatetruecolor($th_w, $th_h);
+                imagecopyresampled($thumbImage, $src_img, 0, 0, 0, 0, $th_w, $th_h, $w, $h);
+                $newImage = imagegif($thumbImage, '', 100);
+                break;
+            default:
+                //echo "Формат изображения не поддерживается.";
+                break;
+        }
+        //удаляем  изображение из памяти.
+        imagedestroy($thumbImage);
+        return $newImage;
+    }
+
 
     public static function goUri($uri)
     {

@@ -8,10 +8,14 @@
   ],
   "autoload": {
     "psr-4": {
-      "App\\" : "app/"
+      "App\\" : "app/",
+      "Core\\" : "core/",
+      "Config\\" : "config/"
+
     }
   },
   "require": {
-    "noahbuscher/macaw": "dev-master"
+    "noahbuscher/macaw": "dev-master",
+    "maximebf/debugbar": "^1.16"
   }
 }
