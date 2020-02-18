@@ -11,7 +11,7 @@ class DB
     const USER  = "user";
     const PASS  = "user";
     const HOST  = "192.168.200.79";
-    const DB    = "1131_TopSite";
+    const DB    = "all-books";
     // для sqlite
     const PATH_TO_SQLITE_FILE = 'database/all-books.db';
 
