@@ -10,6 +10,7 @@ use Core\CoreModel;
 class PostsModel extends CoreModel
 {
     public $lastPosts = array();
+
     public function getLastPost($howmany = 3){
         $sql = "SELECT * FROM " . $this->table ." ORDER BY id DESC  LIMIT ".$howmany;
 

@@ -6,9 +6,6 @@ require_once ('vendor/autoload.php');
 use \NoahBuscher\Macaw\Macaw;
 use DebugBar\StandardDebugBar;
 
-//$debugbar = new StandardDebugBar();
-//$debugbarRenderer = $debugbar->getJavascriptRenderer();
-//$debugbar["messages"]->addMessage("hello world!");
 
 
 Macaw::get('/', function() {

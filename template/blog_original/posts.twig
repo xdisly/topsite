@@ -1,0 +1,111 @@
+{% extends "blog/layout.twig" %}
+{% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-8">
+			<div class="row">
+				{% for post in posts %}
+				<div class="col-12 col-md-12 mb-5">
+					<div class="rs-news-1">
+						<div class="media-box">
+							<a href="post/{{ post.id }}">
+								<img src="{{post.imgUrl}}" alt="" class="img-fluid">
+							</a>
+						</div>
+						<div class="body-box">
+							<div class="meta-date"><span>{{  post.data |date("d") }}</span>{{  mnths[ post.data |date("n") ] }}</div>
+							<div class="title"><a href="post/{{ post.id }}">{{post.title}}</a></div>
+							{{post.introText}}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">Next</a></li>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+
+
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-4">
+			<div class="widget categories">
+				<ul class="category-nav">
+					{% for category in categories %}
+					<li class="active"><a href="category/{{ category.id }}" title="{{ category.name }}">{{ category.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="widget widget-text">
+				<div class="widget-title">
+					Последние публикации
+				</div>
+				{% for lp in lastpost %}
+				<div class="latest-post-item">
+					<div class="meta-date"><span>{{  lp.data |date("d") }}</span>{{  mnths[ lp.data |date("n") ] }}</div>
+					<div class="title"><a href="post/{{ lp.id }}">{{lp.title}}</a></div>
+
+				</div>
+				{% endfor %}
+			</div>
+
+
+			<div class="widget widget-text">
+				<div class="widget-title">
+					Text Widget
+				</div>
+				<p><strong>Gaco is responsive multi-purpose HTML5 template compatible with Bootstrap 4. Take your Startup business website to the next level. It is designed for Landscaping, Gardening & Lawn Business. or any type of person or business who wants to showcase their work, services and professional way.</strong></p>
+				<p>Nam efficitur orci quis leo tincidunt, ac lacinia purus aliquet. Nam pellentesque pretium nibh cursus diam dapibus a.</p>
+			</div>
+
+			<div class="widget widget-archive">
+				<div class="widget-title">
+					Archive
+				</div>
+				<select class="form-control">
+					<option>April 2017</option>
+					<option>March 2017</option>
+					<option>February 2017</option>
+					<option>January 2017</option>
+				</select>
+			</div>
+
+			<div class="widget tags">
+				<div class="widget-title">
+					Tags
+				</div>
+				<div class="tagcloud">
+					<a href="#" title="3 topics">business</a>
+					<a href="#" title="1 topic" >advocate</a>
+					<a href="#" title="1 topic" >attorney</a>
+					<a href="#" title="4 topics" >consult</a>
+					<a href="#" title="2 topics" >consultant</a>
+					<a href="#" title="1 topic" >corporate</a>
+					<a href="#" title="2 topics" >consulting</a>
+					<a href="#" title="1 topic" >government</a>
+					<a href="#" title="2 topics" >justice</a>
+					<a href="#" title="5 topics">law</a>
+					<a href="#" title="2 topics">lawyers</a>
+					<a href="#" title="1 topic" >legal</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- end sidebar -->
+	</div>
+{% endblock %}

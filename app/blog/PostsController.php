@@ -25,7 +25,7 @@ class PostsController
     {
         $postList = $this->Posts->all ();
         $categoriesList = $this->Categories->all ();
-        $lastPost = $this->Posts->getLastPost ();
+        $lastPost = $this->Posts->getLastPost (5);
         //S::dbg ($this->Model->out);
         //S::dbg ($lastPost);
         $this->View->ShowAll($postList,$categoriesList, $lastPost);
