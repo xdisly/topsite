@@ -2,27 +2,77 @@
 {% set mnths = ['','января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'] %}
 
 {% block content %}
+
+	{#<div class="container-fluid my-2">#}
+
+
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-8">
-			<div class="row">
-				{% for post in posts %}
-				<div class="col-12 col-md-12 mb-5">
-					<div class="rs-news-1">
-						<div class="media-box">
-							<a href="post/{{ post.id }}">
-								<img src="{{post.imgUrl}}" alt="" class="img-fluid">
-							</a>
-						</div>
-						<div class="body-box">
-							<div class="meta-date"><span>{{  post.data |date("d") }}</span>{{  mnths[ post.data |date("n") ] }}</div>
-							<div class="title"><a href="post/{{ post.id }}">{{post.title}}</a></div>
-							{{post.introText}}
+
+
+		<div class="col-sm-8">
+			<div class="row my-2">
+    {% for post in posts %}
+
+
+				<div class="col-sm-4 my-2" >
+					<div class="card mb-2 shadow-lg bg-white rounded">
+						<a href="{{post.imgUrl}}">
+						<img src="{{post.imgUrl}}" class="card-img-top">
+						</a>
+
+						<div class="card-body">
+							<h5 class="card-title font-weight-bold"><a href="post/{{ post.id }}">{{post.title}}</a></h5>
+							<p class="card-text">{{  post.data |date("d") }} {{  mnths[ post.data |date("n") ] }} {{post.introText}}</p>
+							<a href="post/{{ post.id }}" class="btn btn-primary">Далее</a>
 						</div>
 					</div>
 				</div>
-				{% endfor %}
 
+        {% endfor %}
 			</div>
+		</div>
+
+
+		<div class="col-sm-4 my-2">
+			<div class="card my-2 shadow-lg bg-white rounded">
+				<div class="card-body">
+					<h5 class="font-weight-bold">Последние посты</h5>
+                    {% for lp in lastpost %}
+						<div class="latest-post-item">
+							<div class="meta-date"><span>{{  lp.data |date("d") }}</span>{{  mnths[ lp.data |date("n") ] }}</div>
+							<div class="title"><a href="post/{{ lp.id }}">{{lp.title}}</a></div>
+						</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-sm-4 my-2">
+			<div class="card my-2 shadow-lg bg-white rounded">
+				<div class="card-body">
+					<nav class="nav flex-column">
+						<a class="nav-link active" href="#">Link 1</a>
+						<a class="nav-link" href="#">Link 2</a>
+						<a class="nav-link" href="#">Link 3</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="widget widget-text">
+			<div class="widget-title">
+				Последние публикации
+			</div>
+            {% for lp in lastpost %}
+				<div class="latest-post-item">
+					<div class="meta-date"><span>{{  lp.data |date("d") }}</span>{{  mnths[ lp.data |date("n") ] }}</div>
+					<div class="title"><a href="post/{{ lp.id }}">{{lp.title}}</a></div>
+
+				</div>
+            {% endfor %}
+		</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
@@ -106,6 +156,10 @@
 			</div>
 
 		</div>
+
+	</div>
+
+
 		<!-- end sidebar -->
 	</div>
 {% endblock %}
